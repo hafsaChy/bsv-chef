@@ -18,7 +18,7 @@ def sut(recipe_readiness: dict):
     ({"Banana Bread": 0.9, "Pancakes": 0.8}, True, "Banana Bread"),
     ({"Banana Bread": 0.9, "Pancakes": 0.8}, True, ["Banana Bread", "Pancakes"])
 ])
-def test_get_recipe(sut, recipe_readiness, diet_compliance, exp_value):
+def test_get_recipe(sut, diet_compliance, exp_value):
     diet = from_string("normal") if diet_compliance else None
     sut.get_recipe = MagicMock()
     sut.get_recipe.return_value = "Banana Bread" if exp_value else None
